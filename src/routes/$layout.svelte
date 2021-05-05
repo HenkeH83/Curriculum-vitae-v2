@@ -1,13 +1,9 @@
 <script>
-	import Header from '$lib/Meny/index.svelte';
+	import Meny from '$lib/Meny/meny.svelte';
 	import '../app.postcss';
 </script>
 
-<Header />
-
+<Meny />
 <main>
 	<slot />
 </main>
-
-<style>
-</style>
