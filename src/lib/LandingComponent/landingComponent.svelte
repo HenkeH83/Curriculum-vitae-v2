@@ -1,9 +1,16 @@
 <script>
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import { homePage } from '$lib/store';
+	import { addPageElement } from '$lib/utility';
+
+	let homeElement;
+
+	onMount(() => {
+		addPageElement(homeElement, 'home');
+	});
 </script>
 
-<article bind:this={$homePage}>
+<article id="home" bind:this={homeElement}>
 	<h1>Landing page!</h1>
 </article>
 

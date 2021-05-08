@@ -1,8 +1,15 @@
 <script>
-	import { contactPage } from '$lib/store';
+	import { onMount } from 'svelte';
+	import { addPageElement } from '$lib/utility';
+
+	let contactPage;
+
+	onMount(() => {
+		addPageElement(contactPage, 'contact');
+	});
 </script>
 
-<article bind:this={$contactPage}>
+<article id="contact" bind:this={contactPage}>
 	<h1>Contact page!</h1>
 </article>
 

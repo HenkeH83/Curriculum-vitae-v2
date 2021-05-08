@@ -1,8 +1,15 @@
 <script>
-	import { portfollioPage } from '$lib/store';
+	import { onMount } from 'svelte';
+	import { addPageElement } from '$lib/utility';
+
+	let portfollioPage;
+
+	onMount(() => {
+		addPageElement(portfollioPage, 'portfolio');
+	});
 </script>
 
-<article bind:this={$portfollioPage}>
+<article id="portfolio" bind:this={portfollioPage}>
 	<h1>Portfolio page!</h1>
 </article>
 

@@ -1,7 +1,9 @@
-import { writable } from 'svelte/store'
+import { writable, readable } from 'svelte/store'
 
-export const homePage = writable(null)
-export const aboutPage = writable(null)
-export const timelinePage = writable(null)
-export const portfollioPage = writable(null)
-export const contactPage = writable(null)
+let pagesObj = new Object()
+export const addPages = (pageObj) => {
+    pagesObj[pageObj.page] = pageObj
+    pages.set(pagesObj)
+}
+
+export const pages = writable(null)

@@ -1,8 +1,15 @@
 <script>
-	import { aboutPage } from '$lib/store';
+	import { onMount } from 'svelte';
+	import { addPageElement } from '$lib/utility';
+
+	let aboutPage;
+
+	onMount(() => {
+		addPageElement(aboutPage, 'about');
+	});
 </script>
 
-<article bind:this={$aboutPage}>
+<article id="about" bind:this={aboutPage}>
 	<h2>About</h2>
 </article>
 

@@ -1,8 +1,15 @@
 <script>
-	import { timelinePage } from '$lib/store';
+	import { onMount } from 'svelte';
+	import { addPageElement } from '$lib/utility';
+
+	let timelinePage;
+
+	onMount(() => {
+		addPageElement(timelinePage, 'timeline');
+	});
 </script>
 
-<article bind:this={$timelinePage}>
+<article id="timeline" bind:this={timelinePage}>
 	<h1>Timeline page!</h1>
 </article>
 
