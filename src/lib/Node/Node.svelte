@@ -40,12 +40,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		/* background-color: chartreuse; */
 	}
 	#dot {
+		fill: black;
 		&.isActive {
 		}
 	}
 	#halo {
+		stroke: black;
 		display: none;
 		&.isActive {
 			display: inline;

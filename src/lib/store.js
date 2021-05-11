@@ -7,3 +7,5 @@ export const addPages = (pageObj) => {
 }
 
 export const pages = writable(null)
+
+export const windowWidth = writable(null)

@@ -8,12 +8,14 @@
 	import TimelineComponent from '$lib/TimelineComponent/timelineComponent.svelte';
 	import PortfolioComponent from '$lib/PortfolioComponent/portfolioComponent.svelte';
 	import ContactComponent from '$lib/ContactComponent/contactComponent.svelte';
-	// import { homePage, aboutPage } from '$lib/store';
+	import { windowWidth } from '$lib/store';
 </script>
 
 <svelte:head>
 	<title>Henrik Hagström, curriculum vitae</title>
 </svelte:head>
+
+<svelte:window bind:innerWidth={$windowWidth} />
 
 <section>
 	<LandingComponent />
