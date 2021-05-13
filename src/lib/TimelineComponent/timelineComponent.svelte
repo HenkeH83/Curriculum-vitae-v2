@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 	import { addPageElement } from '$lib/utility';
 
+	export let content;
+
 	let timelinePage;
 
 	onMount(() => {
@@ -10,7 +12,9 @@
 </script>
 
 <article id="timeline" bind:this={timelinePage}>
-	<h1>Timeline page!</h1>
+	{#each content as post}
+		<h1>{post.title}</h1>
+	{/each}
 </article>
 
 <style style lang="postcss">
