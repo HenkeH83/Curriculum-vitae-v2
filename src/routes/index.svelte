@@ -40,6 +40,7 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
 	import LandingComponent from '$lib/LandingComponent/landingComponent.svelte';
 	import AboutComponent from '$lib/AboutComponent/aboutComponent.svelte';
 	import TimelineComponent from '$lib/TimelineComponent/timelineComponent.svelte';
@@ -50,6 +51,12 @@
 	export let aboutContent;
 	export let skillsContent;
 	export let experienceContent;
+
+	let isReady = false;
+
+	onMount(() => {
+		isReady = true;
+	});
 </script>
 
 <svelte:head>
@@ -59,11 +66,13 @@
 <svelte:window bind:innerWidth={$windowWidth} />
 
 <section>
-	<LandingComponent />
-	<AboutComponent content={aboutContent} />
-	<TimelineComponent content={experienceContent} />
-	<PortfolioComponent />
-	<ContactComponent />
+	{#if isReady}
+		<LandingComponent />
+		<AboutComponent content={aboutContent} />
+		<TimelineComponent content={experienceContent} />
+		<PortfolioComponent />
+		<ContactComponent />
+	{/if}
 </section>
 
 <style style lang="postcss">

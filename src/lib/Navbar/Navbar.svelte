@@ -98,6 +98,7 @@
 
 <style style lang="postcss">
 	nav {
+		z-index: 5;
 		position: fixed;
 		right: 0;
 		width: 8vw;
