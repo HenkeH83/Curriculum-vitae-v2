@@ -1,9 +1,9 @@
 <script>
-	import Meny from '$lib/Meny/meny.svelte';
+	import Navbar from '$lib/Navbar/Navbar.svelte';
 	import '../app.postcss';
 </script>
 
-<Meny />
+<Navbar />
 <main>
 	<slot />
 </main>
