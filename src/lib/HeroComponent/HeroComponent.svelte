@@ -59,8 +59,7 @@
 		line-height: 2.1rem;
 		letter-spacing: 0.3rem;
 
-		animation: dropIn 0.9s ease-out 1;
-		/* animation-delay: 1s; */
+		animation: dropInMobile 0.9s ease-out 1;
 
 		text-align: end;
 
@@ -70,27 +69,18 @@
 
 			/* text-align: center; */
 			text-transform: uppercase;
-			font-size: 2rem;
+			font-size: 1.7rem;
 		}
 
 		& h2 {
 			grid-column: 2;
 			grid-row: 3;
 
-			font-size: 1.2rem;
+			font-size: 0.9rem;
 
 			& span {
 				/* background-image: linear-gradient(yellow, blue); TODO: Lämnar detta här ifall svg bakgrund blir aktuellt */
 			}
-		}
-	}
-
-	@keyframes dropIn {
-		from {
-			line-height: 0rem;
-		}
-		to {
-			line-height: 2.1rem;
 		}
 	}
 
@@ -131,6 +121,39 @@
 			height: 75vh;
 			width: 63vw;
 			font-size: 5rem;
+
+			grid-template-columns: 1fr 1fr 1fr 2rem;
+			grid-template-rows: 2rem 1fr 1fr 1fr;
+
+			animation: dropInDesktop 0.9s ease-out 1;
+			line-height: 3.3rem;
+
+			& h1 {
+				font-size: 3rem;
+				grid-column: 3;
+			}
+
+			& h2 {
+				grid-column: 2 / span 2;
+			}
+		}
+	}
+
+	@keyframes dropInMobile {
+		from {
+			line-height: 0rem;
+		}
+		to {
+			line-height: 2.1rem;
+		}
+	}
+
+	@keyframes dropInDesktop {
+		from {
+			line-height: 0rem;
+		}
+		to {
+			line-height: 3.3rem;
 		}
 	}
 </style>
