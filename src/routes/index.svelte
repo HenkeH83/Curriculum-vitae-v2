@@ -41,7 +41,7 @@
 
 <script>
 	import { onMount } from 'svelte';
-	import LandingComponent from '$lib/LandingComponent/landingComponent.svelte';
+	import HeroComponent from '$lib/HeroComponent/HeroComponent.svelte';
 	import AboutComponent from '$lib/AboutComponent/aboutComponent.svelte';
 	import TimelineComponent from '$lib/TimelineComponent/timelineComponent.svelte';
 	import PortfolioComponent from '$lib/PortfolioComponent/portfolioComponent.svelte';
@@ -67,7 +67,7 @@
 
 <section>
 	{#if isReady}
-		<LandingComponent />
+		<HeroComponent />
 		<AboutComponent content={aboutContent} />
 		<TimelineComponent content={experienceContent} />
 		<PortfolioComponent />

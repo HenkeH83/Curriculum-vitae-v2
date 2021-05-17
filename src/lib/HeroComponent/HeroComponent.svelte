@@ -19,7 +19,8 @@
 			<img in:fade={{ delay: 200, x: 500, duration: 500 }} src="/halfHero.svg" alt="Henrik" />
 		{/if}
 		<colorBox in:fly={{ x: -500, duration: 500 }}>
-			<h1>Fullstack frontend developer with a passion for great <span>design</span></h1>
+			<h1>Fullstack frontend developer</h1>
+			<h2>With a passion for great <span>design</span></h2>
 		</colorBox>
 	</heroContainer>
 </article>
@@ -52,20 +53,31 @@
 		background-color: var(--light-green);
 
 		display: grid;
-		grid-template-columns: 2rem 1fr 2rem;
-		grid-template-rows: 2rem 1fr 30%;
+		grid-template-columns: 1.5rem 1fr 2rem;
+		grid-template-rows: 2rem 1fr 1fr 30%;
+
+		line-height: 2.1rem;
+		letter-spacing: 0.3rem;
+
+		animation: dropIn 0.9s ease-out 1;
+		/* animation-delay: 1s; */
+
+		text-align: end;
 
 		& h1 {
 			grid-column: 2;
 			grid-row: 2;
 
-			text-align: end;
+			/* text-align: center; */
+			text-transform: uppercase;
 			font-size: 2rem;
-			line-height: 2.1rem;
-			letter-spacing: 0.2rem;
+		}
 
-			animation: dropIn 0.9s ease-out 1;
-			/* animation-delay: 1s; */
+		& h2 {
+			grid-column: 2;
+			grid-row: 3;
+
+			font-size: 1.2rem;
 
 			& span {
 				/* background-image: linear-gradient(yellow, blue); TODO: Lämnar detta här ifall svg bakgrund blir aktuellt */
