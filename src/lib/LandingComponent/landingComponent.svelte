@@ -19,8 +19,7 @@
 			<img in:fade={{ delay: 200, x: 500, duration: 500 }} src="/halfHero.svg" alt="Henrik" />
 		{/if}
 		<colorBox in:fly={{ x: -500, duration: 500 }}>
-			<h1>Hej</h1>
-			<p>Jag är grym</p>
+			<h1>Fullstack frontend developer with a passion for great <span>design</span></h1>
 		</colorBox>
 	</heroContainer>
 </article>
@@ -41,7 +40,7 @@
 		height: 45vh;
 		position: absolute;
 		bottom: 0;
-		left: -12.5vw;
+		left: -13.5vw;
 		overflow: hidden;
 	}
 	colorBox {
@@ -51,9 +50,51 @@
 		width: 100%;
 		height: 100%;
 		background-color: var(--light-green);
-		text-align: end;
-		font-size: 2rem;
+
+		display: grid;
+		grid-template-columns: 2rem 1fr 2rem;
+		grid-template-rows: 2rem 1fr 30%;
+
+		& h1 {
+			grid-column: 2;
+			grid-row: 2;
+
+			text-align: end;
+			font-size: 2rem;
+			line-height: 2.1rem;
+			letter-spacing: 0.2rem;
+
+			animation: dropIn 0.9s ease-out 1;
+			/* animation-delay: 1s; */
+
+			& span {
+				/* background-image: linear-gradient(yellow, blue); TODO: Lämnar detta här ifall svg bakgrund blir aktuellt */
+			}
+		}
 	}
+
+	@keyframes dropIn {
+		from {
+			line-height: 0rem;
+		}
+		to {
+			line-height: 2.1rem;
+		}
+	}
+
+	/* Ifall vi vill hantera den dåliga landscape layouten i mobil, funkar inte riktigt just nu. 
+	@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+		html {
+			transform: rotate(-90deg);
+			transform-origin: left top;
+			width: 100vh;
+			overflow-x: hidden;
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+	} */
+
 	@media only screen and (min-width: 900px) {
 		article {
 			width: 85vw;

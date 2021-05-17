@@ -5,11 +5,10 @@
 	import Arrow from '$lib/Navbar/Arrow.svelte';
 
 	let currentPage = 'home';
-	let elementList;
-	let isReady = false;
 	let isTouchScreen = false;
-	let navElement;
 	let openMobile = false;
+	let navElement;
+	let elementList;
 	let startX;
 	let endX;
 
@@ -27,7 +26,7 @@
 
 		//Fler options
 		const options = {
-			rootMargin: '-30px',
+			rootMargin: '-100px',
 			threshold: 0
 		};
 		if ($windowWidth >= 600) {
@@ -48,8 +47,6 @@
 			console.log('new observer');
 			observer.observe(element);
 		});
-
-		isReady = true;
 	}
 
 	function scrollTo(page) {
@@ -100,16 +97,14 @@
 	nav {
 		z-index: 5;
 		position: fixed;
-		right: 0;
+		right: 0.6rem;
 		width: 8vw;
-		margin-right: 0.6rem;
 		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		transition: all 0.3s ease-in;
-		/* background-color: aquamarine; */
 	}
 
 	gridContainer {
@@ -121,7 +116,6 @@
 		& btn {
 			width: 100%;
 			height: 100%;
-			/* padding-right: 1.6rem; */
 			display: flex;
 			flex-direction: row;
 			justify-content: flex-end;
@@ -154,7 +148,6 @@
 		& btn {
 			width: 37%;
 			height: 64%;
-			/* background-color: violet; */
 			& h3 {
 				transform: rotateY(0deg) rotate(-90deg);
 			}
