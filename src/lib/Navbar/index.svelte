@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { pages, windowWidth } from '$lib/store';
-	import Node from '$lib/Node/Node.svelte';
+	import Node from '$lib/Node/index.svelte';
 	import Arrow from '$lib/Navbar/Arrow.svelte';
 
 	let currentPage = 'home';

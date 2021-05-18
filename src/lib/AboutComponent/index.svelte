@@ -20,10 +20,12 @@
 
 <style style lang="postcss">
 	article {
+		margin-bottom: 5rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
+		line-height: 1.2rem;
 
 		& h2 {
 			font-size: 1.7rem;
@@ -32,6 +34,13 @@
 
 		& blockContainer {
 			padding-right: 1rem;
+		}
+	}
+
+	@media only screen and (min-width: 1024px) {
+		article {
+			padding-right: 0rem;
+			width: 50%;
 		}
 	}
 </style>

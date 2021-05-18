@@ -24,17 +24,26 @@
 		relevance,
 		body
 	}`;
+	const portfolioFilter = `*[_type == 'portfolio']`;
+	const portfolioQuery = `{
+		title,
+		link,
+		image,
+		body
+	}`;
 
 	export async function load() {
 		const aboutRes = await client.fetch(aboutFilter, aboutQuery);
 		const skillsRes = await client.fetch(skillsFilter, skillsQuery);
 		const experienceRes = await client.fetch(experienceFilter, experienceQuery);
+		const portfolioRes = await client.fetch(portfolioFilter, portfolioQuery);
 
 		return {
 			props: {
 				aboutContent: await aboutRes,
 				skillsContent: await skillsRes,
-				experienceContent: await experienceRes
+				experienceContent: await experienceRes,
+				portfofioContent: await portfolioRes
 			}
 		};
 	}
@@ -42,17 +51,18 @@
 
 <script>
 	import { onMount } from 'svelte';
-	import HeroComponent from '$lib/HeroComponent/HeroComponent.svelte';
-	import AboutComponent from '$lib/AboutComponent/AboutComponent.svelte';
-	import SkillsComponent from '$lib/SkillsComponent/SkillsComponent.svelte';
-	import TimelineComponent from '$lib/TimelineComponent/TimelineComponent.svelte';
-	import PortfolioComponent from '$lib/PortfolioComponent/PortfolioComponent.svelte';
-	import ContactComponent from '$lib/ContactComponent/ContactComponent.svelte';
+	import HeroComponent from '$lib/HeroComponent/index.svelte';
+	import AboutComponent from '$lib/AboutComponent/index.svelte';
+	import SkillsComponent from '$lib/SkillsComponent/index.svelte';
+	import TimelineComponent from '$lib/TimelineComponent/index.svelte';
+	import PortfolioComponent from '$lib/PortfolioComponent/index.svelte';
+	import ContactComponent from '$lib/ContactComponent/index.svelte';
 	import { windowWidth } from '$lib/store';
 
 	export let aboutContent;
 	export let skillsContent;
 	export let experienceContent;
+	export let portfofioContent;
 
 	let isReady = false;
 
@@ -73,7 +83,7 @@
 		<AboutComponent content={aboutContent} />
 		<SkillsComponent content={skillsContent} />
 		<TimelineComponent content={experienceContent} />
-		<PortfolioComponent />
+		<PortfolioComponent content={portfofioContent} />
 		<ContactComponent />
 	{/if}
 </section>

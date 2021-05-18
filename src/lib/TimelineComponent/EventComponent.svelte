@@ -1,5 +1,5 @@
 <script>
-	import Node from '$lib/Node/Node.svelte';
+	import Node from '$lib/Node/index.svelte';
 
 	export let content;
 	export let position;
