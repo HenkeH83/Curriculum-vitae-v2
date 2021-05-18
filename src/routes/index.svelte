@@ -10,9 +10,10 @@
 	const skillsFilter = `*[_type == 'skills']`;
 	const skillsQuery = `{
 		title,
+		level,
 		body
 	}`;
-	const experienceFilter = `*[_type == 'experience']`;
+	const experienceFilter = `*[_type == 'experience'] | order(startDate desc)`;
 	const experienceQuery = `{
 		title,
 		organization,
@@ -42,10 +43,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import HeroComponent from '$lib/HeroComponent/HeroComponent.svelte';
-	import AboutComponent from '$lib/AboutComponent/aboutComponent.svelte';
-	import TimelineComponent from '$lib/TimelineComponent/timelineComponent.svelte';
-	import PortfolioComponent from '$lib/PortfolioComponent/portfolioComponent.svelte';
-	import ContactComponent from '$lib/ContactComponent/contactComponent.svelte';
+	import AboutComponent from '$lib/AboutComponent/AboutComponent.svelte';
+	import SkillsComponent from '$lib/SkillsComponent/SkillsComponent.svelte';
+	import TimelineComponent from '$lib/TimelineComponent/TimelineComponent.svelte';
+	import PortfolioComponent from '$lib/PortfolioComponent/PortfolioComponent.svelte';
+	import ContactComponent from '$lib/ContactComponent/ContactComponent.svelte';
 	import { windowWidth } from '$lib/store';
 
 	export let aboutContent;
@@ -69,6 +71,7 @@
 	{#if isReady}
 		<HeroComponent />
 		<AboutComponent content={aboutContent} />
+		<SkillsComponent content={skillsContent} />
 		<TimelineComponent content={experienceContent} />
 		<PortfolioComponent />
 		<ContactComponent />

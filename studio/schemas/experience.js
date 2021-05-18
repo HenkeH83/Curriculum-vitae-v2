@@ -19,15 +19,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'organization',
-        maxLength: 96,
-      },
-    },
-    {
       name: 'categories',
       title: 'Categories',
       type: 'reference',

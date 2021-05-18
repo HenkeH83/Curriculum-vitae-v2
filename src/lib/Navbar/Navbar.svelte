@@ -13,28 +13,22 @@
 	let endX;
 
 	// Kanske optimera denna lite
-	$: if ($pages != null && Object.keys($pages).length >= 5) {
+	$: if ($pages != null && Object.keys($pages).length >= 6) {
 		const {
 			home: { element: homeElement },
 			about: { element: aboutElement },
+			skills: { element: skillsElement },
 			timeline: { element: timelineElement },
 			portfolio: { element: portfolioElement },
 			contact: { element: contactElement }
 		} = $pages;
 
-		elementList = [homeElement, aboutElement, timelineElement, portfolioElement, contactElement];
+		elementList = [homeElement, aboutElement, skillsElement, timelineElement, portfolioElement, contactElement];
 
-		//Fler options
 		const options = {
-			rootMargin: '-100px',
-			threshold: 0
+			rootMargin: '0px',
+			threshold: 0.25
 		};
-		if ($windowWidth >= 600) {
-			options.rootMargin = '-200px';
-		}
-		if ($windowWidth >= 900) {
-			options.rootMargin = '-300px';
-		}
 		const observer = new IntersectionObserver((entries, observer) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
@@ -81,6 +75,8 @@
 		<btn on:click={scrollTo($pages.home.element)}><h3>Home</h3></btn>
 		<Node isActive={currentPage === 'about'} position={'middle'} on:clicked={scrollTo($pages.about.element)} />
 		<btn on:click={scrollTo($pages.about.element)}><h3>About</h3></btn>
+		<Node isActive={currentPage === 'skills'} position={'middle'} on:clicked={scrollTo($pages.skills.element)} />
+		<btn on:click={scrollTo($pages.skills.element)}><h3>Skills</h3></btn>
 		<Node isActive={currentPage === 'timeline'} position={'middle'} on:clicked={scrollTo($pages.timeline.element)} />
 		<btn on:click={scrollTo($pages.timeline.element)}><h3>Timeline</h3></btn>
 		<Node isActive={currentPage === 'portfolio'} position={'middle'} on:clicked={scrollTo($pages.portfolio.element)} />
@@ -129,10 +125,10 @@
 			}
 		}
 		@media only screen and (max-height: 600px) {
-			height: 100vh;
+			height: 85vh;
 		}
-		@media only screen and (max-height: 740px) {
-			height: 65vh;
+		@media only screen and (max-height: 900px) {
+			height: 75vh;
 		}
 	}
 	btn:hover {

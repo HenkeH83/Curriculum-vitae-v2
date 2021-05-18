@@ -27,13 +27,14 @@
 
 <style style lang="postcss">
 	article {
+		height: 100vh;
 		display: flex;
 		align-items: center;
 	}
 	heroContainer {
 		width: 100%;
 		height: 75%;
-		margin-top: 3vh;
+		/* margin-top: 3vh; */
 		position: relative;
 	}
 	img {

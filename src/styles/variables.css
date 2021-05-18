@@ -1,8 +1,9 @@
 :root{
-    --light-green: #cce8e2ff;
+    --light-green: #cce8e2ff; /* den enda som används än */
     --dark-green: #89a59eff;
     --matt-black: #89a59eff;
     --dark-blue: #2c2f3fff;
     --accent-color: rgb(255, 65, 255);
     --trans-black: rgba(0,0,0,0.7)
+
 }
