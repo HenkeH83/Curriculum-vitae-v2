@@ -73,8 +73,7 @@
 	#title {
 		grid-column: 3;
 		grid-row: 3;
-
-		transition: all 0.3s;
+		font-size: 1.2rem;
 	}
 	#subTitle {
 		grid-column: 3;
@@ -96,7 +95,7 @@
 		&.isActive {
 			line-height: 1.2rem;
 			opacity: 1;
-			font-size: 0.8rem;
+			/* font-size: 0.8rem; */
 			margin-top: 1rem;
 			animation: dropInMobile 0.3s linear 1;
 		}

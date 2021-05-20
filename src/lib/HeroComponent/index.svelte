@@ -34,7 +34,6 @@
 	heroContainer {
 		width: 100%;
 		height: 75%;
-		/* margin-top: 3vh; */
 		position: relative;
 	}
 	img {

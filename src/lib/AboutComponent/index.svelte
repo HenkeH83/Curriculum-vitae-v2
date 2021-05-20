@@ -40,7 +40,6 @@
 	@media only screen and (min-width: 1024px) {
 		article {
 			padding-right: 0rem;
-			width: 50%;
 		}
 	}
 </style>
