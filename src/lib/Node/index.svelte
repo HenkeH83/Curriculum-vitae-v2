@@ -1,5 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
+	// import { nodePositions } from '$lib/utility'
 
 	export let isActive;
 	export let position;
@@ -40,7 +41,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		/* background-color: chartreuse; */
+		height: 100%;
 	}
 	#dot {
 		fill: black;

@@ -4,9 +4,9 @@
 
 	let contactElement;
 
-	onMount(() => {
-		addPageElement(contactElement, 'contact');
-	});
+	// onMount(() => {
+	// 	addPageElement(contactElement, 'contact');
+	// });
 </script>
 
 <article id="contact" bind:this={contactElement}>

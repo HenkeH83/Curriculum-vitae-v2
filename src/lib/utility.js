@@ -16,3 +16,11 @@ export function toHtml(content) {
         serializers: serializer
     })
 }
+
+export const nodePositions = ['top', 'middle', 'bottom']
+
+export function getNodePosition(theArray, theIndex) {
+    if (theIndex === 0) return nodePositions[0];
+    if ((theArray.length - 1) === theIndex) return nodePositions[2];
+    return nodePositions[1];
+}

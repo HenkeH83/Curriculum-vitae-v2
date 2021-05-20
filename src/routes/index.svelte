@@ -56,7 +56,7 @@
 	import SkillsComponent from '$lib/SkillsComponent/index.svelte';
 	import TimelineComponent from '$lib/TimelineComponent/index.svelte';
 	import PortfolioComponent from '$lib/PortfolioComponent/index.svelte';
-	import ContactComponent from '$lib/ContactComponent/index.svelte';
+	// import ContactComponent from '$lib/ContactComponent/index.svelte';
 	import { windowWidth } from '$lib/store';
 
 	export let aboutContent;
@@ -84,7 +84,7 @@
 		<SkillsComponent content={skillsContent} />
 		<TimelineComponent content={experienceContent} />
 		<PortfolioComponent content={portfofioContent} />
-		<ContactComponent />
+		<!-- <ContactComponent /> -->
 	{/if}
 </section>
 

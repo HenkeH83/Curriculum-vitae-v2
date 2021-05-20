@@ -1,11 +1,12 @@
 <script>
 	import { onMount } from 'svelte';
-	import { addPageElement } from '$lib/utility';
+	import { addPageElement, getNodePosition } from '$lib/utility';
 	import EventComponent from './EventComponent.svelte';
 
 	export let content;
 
 	let timelineElement;
+	// $: console.log(content);
 
 	onMount(() => {
 		addPageElement(timelineElement, 'timeline');
@@ -13,13 +14,13 @@
 </script>
 
 <article id="timeline" bind:this={timelineElement}>
-	{#each content as lifeEvent}
-		<EventComponent content={lifeEvent} position={'middle'} />
+	{#each content as lifeEvent, index}
+		<EventComponent content={lifeEvent} position={getNodePosition(content, index)} />
 	{/each}
 </article>
 
 <style style lang="postcss">
 	article {
-		background-color: var(--light-green);
+		margin-bottom: 3rem;
 	}
 </style>

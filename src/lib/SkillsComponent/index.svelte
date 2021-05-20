@@ -5,7 +5,7 @@
 	export let content;
 
 	let skillsElement;
-	$: console.log(content);
+	// $: console.log(content);
 	onMount(() => {
 		addPageElement(skillsElement, 'skills');
 	});
@@ -21,7 +21,9 @@
 
 <style style lang="postcss">
 	article {
-		height: 100vh;
-		background-color: violet;
+		/* height: 100vh; */
+		margin-bottom: 3rem;
+		/* color: white; */
+		background-color: var(--light-green);
 	}
 </style>

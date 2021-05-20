@@ -13,17 +13,17 @@
 	let endX;
 
 	// Kanske optimera denna lite
-	$: if ($pages != null && Object.keys($pages).length >= 6) {
+	$: if ($pages != null && Object.keys($pages).length >= 5) {
 		const {
 			home: { element: homeElement },
 			about: { element: aboutElement },
 			skills: { element: skillsElement },
 			timeline: { element: timelineElement },
-			portfolio: { element: portfolioElement },
-			contact: { element: contactElement }
+			portfolio: { element: portfolioElement }
+			// contact: { element: contactElement }
 		} = $pages;
 
-		elementList = [homeElement, aboutElement, skillsElement, timelineElement, portfolioElement, contactElement];
+		elementList = [homeElement, aboutElement, skillsElement, timelineElement, portfolioElement /* , contactElement */];
 
 		const options = {
 			rootMargin: '0px',
@@ -79,10 +79,10 @@
 		<btn on:click={scrollTo($pages.skills.element)}><h3>Skills</h3></btn>
 		<Node isActive={currentPage === 'timeline'} position={'middle'} on:clicked={scrollTo($pages.timeline.element)} />
 		<btn on:click={scrollTo($pages.timeline.element)}><h3>Timeline</h3></btn>
-		<Node isActive={currentPage === 'portfolio'} position={'middle'} on:clicked={scrollTo($pages.portfolio.element)} />
+		<Node isActive={currentPage === 'portfolio'} position={'bottom'} on:clicked={scrollTo($pages.portfolio.element)} />
 		<btn on:click={scrollTo($pages.portfolio.element)}><h3>Portfolio</h3></btn>
-		<Node isActive={currentPage === 'contact'} position={'bottom'} on:clicked={scrollTo($pages.contact.element)} />
-		<btn on:click={scrollTo($pages.contact.element)}><h3>Contact</h3></btn>
+		<!-- <Node isActive={currentPage === 'contact'} position={'bottom'} on:clicked={scrollTo($pages.contact.element)} />
+		<btn on:click={scrollTo($pages.contact.element)}><h3>Contact</h3></btn> -->
 	</gridContainer>
 	{#if isTouchScreen}
 		<Arrow isOpen={openMobile} />

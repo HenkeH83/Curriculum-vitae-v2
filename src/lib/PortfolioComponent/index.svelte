@@ -20,7 +20,7 @@
 
 <style style lang="postcss">
 	article {
-		background-color: royalblue;
-		height: 100vh;
+		background-color: var(--light-green);
+		/* height: 100vh; */
 	}
 </style>

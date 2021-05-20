@@ -25,7 +25,7 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		line-height: 1.2rem;
+		/* line-height: 1.2rem; */
 
 		& h2 {
 			font-size: 1.7rem;
