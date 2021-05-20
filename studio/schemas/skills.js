@@ -15,6 +15,12 @@ export default {
             to: { type: 'skillLevel' }
         },
         {
+            name: 'type',
+            title: 'Skill type',
+            type: 'reference',
+            to: { type: 'skillType' }
+        },
+        {
             name: 'body',
             title: 'Body',
             type: 'blockContent',

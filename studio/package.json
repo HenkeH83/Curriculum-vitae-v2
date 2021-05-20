@@ -2,9 +2,9 @@
   "name": "henrikcurriculumvitae",
   "private": true,
   "version": "1.0.0",
-  "description": "Studio for my CV site",
+  "description": "",
   "main": "package.json",
-  "author": "Henrik Hagstrom <henrik.g.hagstrom@gmail.com>",
+  "author": "Henrik Hagström <henrik.g.hagstrom@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
@@ -19,10 +19,15 @@
     "@sanity/core": "^2.10.2",
     "@sanity/default-layout": "^2.10.2",
     "@sanity/default-login": "^2.8.0",
-    "@sanity/desk-tool": "^1.149.19",
+    "@sanity/desk-tool": "^2.10.4",
     "@sanity/vision": "^2.10.0",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HenkeH83/Curriculum-vitae-v2.git"
   }
 }

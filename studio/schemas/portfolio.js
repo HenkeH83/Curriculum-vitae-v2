@@ -22,6 +22,11 @@ export default {
             }
         },
         {
+            name: 'alt',
+            title: 'Atl text',
+            type: 'string'
+        },
+        {
             name: 'body',
             title: 'Body',
             type: 'blockContent'
