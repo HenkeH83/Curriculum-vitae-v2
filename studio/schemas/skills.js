@@ -9,6 +9,24 @@ export default {
             type: 'string',
         },
         {
+            name: 'icon',
+            title: 'Icon',
+            type: 'image',
+            options: {
+                hotspot: true
+            },
+        },
+        {
+            name: 'alt',
+            title: 'Alt text',
+            type: 'string',
+        },
+        {
+            name: 'order',
+            title: 'Sort order',
+            type: 'number'
+        },
+        {
             name: 'level',
             title: 'Level',
             type: 'reference',

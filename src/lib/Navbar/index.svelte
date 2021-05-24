@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import { onMount } from 'svelte';
 	import { pages, windowWidth } from '$lib/store';
@@ -38,7 +42,6 @@
 		}, options);
 
 		elementList.forEach((element) => {
-			console.log('new observer');
 			observer.observe(element);
 		});
 	}
@@ -164,6 +167,40 @@
 			@media only screen and (min-width: 768px) {
 				width: 10vw;
 			}
+		}
+	}
+
+	@keyframes bounce {
+		0% {
+			width: 50px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		33% {
+			width: 250px;
+			-webkit-animation-timing-function: ease-out;
+		}
+		50% {
+			width: 210px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		66% {
+			width: 250px;
+			-webkit-animation-timing-function: ease-out;
+		}
+		82% {
+			width: 240px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		92% {
+			width: 250px;
+			-webkit-animation-timing-function: ease-out;
+		}
+		97% {
+			width: 245px;
+			-webkit-animation-timing-function: ease-in;
+		}
+		100% {
+			width: 250px;
 		}
 	}
 </style>

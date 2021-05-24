@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import { scale } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -32,7 +36,7 @@
 	{/if}
 	<h3 id="title" class="header" class:isActive>{content.title}</h3>
 	<p id="subTitle" class="header" class:isActive>{content.organization}, {content.location}</p>
-	<blockContainer class:isActive>
+	<blockContainer class="[ collapseableText ]" class:isActive>
 		{@html toHtml(content)}
 	</blockContainer>
 </eventContainer>
@@ -89,36 +93,8 @@
 	blockContainer {
 		grid-column: 3;
 		grid-row: 5;
-		line-height: 0rem;
-		opacity: 0;
-		animation: dropOutMobile 0.3s linear 1;
 		&.isActive {
-			line-height: 1.2rem;
-			opacity: 1;
-			/* font-size: 0.8rem; */
 			margin-top: 1rem;
-			animation: dropInMobile 0.3s linear 1;
-		}
-	}
-
-	@keyframes dropInMobile {
-		from {
-			line-height: 0rem;
-			opacity: 0;
-		}
-		to {
-			line-height: 1.2rem;
-			opacity: 1;
-		}
-	}
-	@keyframes dropOutMobile {
-		from {
-			line-height: 1.2rem;
-			opacity: 1;
-		}
-		to {
-			line-height: 0rem;
-			opacity: 0;
 		}
 	}
 

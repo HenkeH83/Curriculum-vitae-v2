@@ -1,29 +1,33 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import { onMount } from 'svelte';
-	import { addPageElement, toHtml } from '$lib/utility';
+	import { addPageElement } from '$lib/utility';
+	import SkillsItem from './SkillsItem.svelte';
 
 	export let content;
 
 	let skillsElement;
-	// $: console.log(content);
 	onMount(() => {
 		addPageElement(skillsElement, 'skills');
 	});
 </script>
 
 <article id="skills" bind:this={skillsElement}>
-	{#each content as skill}
-		<h2>{skill.skill}</h2>
-		<!-- <p>{skill.level.skillLevel}</p> -->
-		{@html toHtml(skill)}
+	{#each content as skill, index}
+		<SkillsItem content={skill} />
 	{/each}
 </article>
 
 <style style lang="postcss">
 	article {
-		/* height: 100vh; */
+		width: 100%;
 		margin-bottom: 3rem;
-		/* color: white; */
-		background-color: var(--light-green);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		/* background-color: var(--light-blue); */
 	}
 </style>

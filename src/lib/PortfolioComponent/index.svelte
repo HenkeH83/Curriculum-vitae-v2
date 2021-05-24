@@ -1,6 +1,11 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import { onMount } from 'svelte';
-	import { addPageElement, toHtml } from '$lib/utility';
+	import { addPageElement } from '$lib/utility';
+	import PortfolioItem from './portfolioItem.svelte';
 
 	export let content;
 
@@ -13,8 +18,7 @@
 
 <article id="portfolio" bind:this={portfollioElement}>
 	{#each content as post}
-		<a href={post.link}>{post.title}</a>
-		{@html toHtml(post)}
+		<PortfolioItem content={post} />
 	{/each}
 </article>
 
