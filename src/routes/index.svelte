@@ -9,6 +9,7 @@
 	}`;
 	const skillsProjection = `*[_type == 'skills' && type -> skillType match 'code'] | order(order asc)`;
 	const skillsFilter = `{
+		_id,
 		skill,
 		icon {
 			asset -> {

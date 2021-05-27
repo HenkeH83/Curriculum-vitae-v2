@@ -46,6 +46,7 @@
 		display: grid;
 		grid-template-columns: 0.5rem 1fr 6fr 0.5rem;
 		grid-template-rows: 1rem repeat(4, auto) 1rem;
+		cursor: pointer;
 	}
 	nodeContainer {
 		grid-column: 2;

@@ -4,6 +4,7 @@
 
 <script>
 	import { onMount } from 'svelte';
+	import { bounceInOut } from 'svelte/easing';
 	import { pages, windowWidth } from '$lib/store';
 	import Node from '$lib/Node/index.svelte';
 	import Arrow from '$lib/Navbar/Arrow.svelte';
@@ -104,6 +105,7 @@
 		justify-content: center;
 		align-items: center;
 		transition: all 0.3s ease-in;
+		cursor: pointer;
 	}
 
 	gridContainer {
@@ -124,7 +126,7 @@
 				height: fit-content;
 				transform: rotateY(0deg) rotate(-90deg);
 				transform-origin: bottom right;
-				transition: all 0.3s ease-out;
+				transition: all 0.3s ease-in-out;
 			}
 		}
 		@media only screen and (max-height: 600px) {
@@ -134,9 +136,9 @@
 			height: 75vh;
 		}
 	}
-	btn:hover {
+	/* btn:hover {
 		cursor: pointer;
-	}
+	} */
 	nav:hover btn h3 {
 		transform: rotate(0deg);
 	}
@@ -170,6 +172,7 @@
 		}
 	}
 
+	/** används inte */
 	@keyframes bounce {
 		0% {
 			width: 50px;
