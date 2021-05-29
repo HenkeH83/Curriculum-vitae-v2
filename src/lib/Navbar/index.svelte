@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { bounceInOut } from 'svelte/easing';
 	import { pages, windowWidth } from '$lib/store';
+	import { scrollInto } from '$lib/utility';
 	import Node from '$lib/Node/index.svelte';
 	import Arrow from '$lib/Navbar/Arrow.svelte';
 
@@ -47,14 +48,14 @@
 		});
 	}
 
-	function scrollTo(page) {
-		const scrollOptions = {
-			behavior: 'smooth',
-			block: 'start',
-			inline: 'start'
-		};
-		page.scrollIntoView(scrollOptions);
-	}
+	// function scrollInto(page) {
+	// 	const scrollOptions = {
+	// 		behavior: 'smooth',
+	// 		block: 'start',
+	// 		inline: 'start'
+	// 	};
+	// 	page.scrollIntoView(scrollOptions);
+	// }
 	function startTuch(event) {
 		startX = event.changedTouches[0].pageX;
 	}
@@ -75,24 +76,25 @@
 
 <nav class:isTouchScreen class:openMobile bind:this={navElement}>
 	<gridContainer>
-		<Node isActive={currentPage === 'home'} position={'top'} on:clicked={scrollTo($pages.home.element)} />
-		<btn on:click={scrollTo($pages.home.element)}><h3>Home</h3></btn>
-		<Node isActive={currentPage === 'about'} position={'middle'} on:clicked={scrollTo($pages.about.element)} />
-		<btn on:click={scrollTo($pages.about.element)}><h3>About</h3></btn>
-		<Node isActive={currentPage === 'skills'} position={'middle'} on:clicked={scrollTo($pages.skills.element)} />
-		<btn on:click={scrollTo($pages.skills.element)}><h3>Skills</h3></btn>
-		<Node isActive={currentPage === 'timeline'} position={'middle'} on:clicked={scrollTo($pages.timeline.element)} />
-		<btn on:click={scrollTo($pages.timeline.element)}><h3>Timeline</h3></btn>
-		<Node isActive={currentPage === 'portfolio'} position={'bottom'} on:clicked={scrollTo($pages.portfolio.element)} />
-		<btn on:click={scrollTo($pages.portfolio.element)}><h3>Portfolio</h3></btn>
-		<!-- <Node isActive={currentPage === 'contact'} position={'bottom'} on:clicked={scrollTo($pages.contact.element)} />
-		<btn on:click={scrollTo($pages.contact.element)}><h3>Contact</h3></btn> -->
+		<Node isActive={currentPage === 'home'} position={'top'} on:clicked={scrollInto($pages.home.element)} />
+		<btn on:click={scrollInto($pages.home.element)}><h3>Home</h3></btn>
+		<Node isActive={currentPage === 'about'} position={'middle'} on:clicked={scrollInto($pages.about.element)} />
+		<btn on:click={scrollInto($pages.about.element)}><h3>About</h3></btn>
+		<Node isActive={currentPage === 'skills'} position={'middle'} on:clicked={scrollInto($pages.skills.element)} />
+		<btn on:click={scrollInto($pages.skills.element)}><h3>Skills</h3></btn>
+		<Node isActive={currentPage === 'timeline'} position={'middle'} on:clicked={scrollInto($pages.timeline.element)} />
+		<btn on:click={scrollInto($pages.timeline.element)}><h3>Timeline</h3></btn>
+		<Node isActive={currentPage === 'portfolio'} position={'bottom'} on:clicked={scrollInto($pages.portfolio.element)} />
+		<btn on:click={scrollInto($pages.portfolio.element)}><h3>Portfolio</h3></btn>
+		<!-- <Node isActive={currentPage === 'contact'} position={'bottom'} on:clicked={scrollInto($pages.contact.element)} />
+		<btn on:click={scrollInto($pages.contact.element)}><h3>Contact</h3></btn> -->
 	</gridContainer>
 	{#if isTouchScreen}
 		<Arrow isOpen={openMobile} />
 	{/if}
 </nav>
 
+<!-- kolla igenom storleken i olika upplösningar -->
 <style style lang="postcss">
 	nav {
 		z-index: 5;

@@ -5,7 +5,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { flip } from 'svelte/animate';
-	import { addPageElement } from '$lib/utility';
+	import { addPageElement, scrollInto } from '$lib/utility';
 	import SkillsItem from './SkillsItem.svelte';
 	import { windowWidth } from '$lib/store';
 	import { send, receive } from '$lib/crossfade';
@@ -21,10 +21,10 @@
 		if ($windowWidth < 1024) return;
 		cardList = cardList.filter((card) => card._id != item._id);
 		activeList = activeList.concat(item).sort((a, b) => a.order - b.order);
+		// scrollInto();	// Titta på detta sen, kan vara skönt att scrolla till den skill man tryckt på
 	}
 
 	function removeActive(item) {
-		console.log('item', { item });
 		activeList = activeList.filter((card) => card._id != item._id);
 		cardList = cardList.concat(item).sort((a, b) => a.order - b.order);
 	}
@@ -69,7 +69,6 @@
 				width: 60vw;
 				min-height: 60vw;
 				margin-bottom: 1rem;
-				cursor: pointer;
 			}
 		}
 	}
@@ -88,6 +87,7 @@
 					width: 16rem;
 					min-height: unset;
 					height: 16rem;
+					cursor: pointer;
 
 					&.isActive {
 						grid-column: 1 / -1;

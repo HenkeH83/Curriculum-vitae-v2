@@ -24,7 +24,7 @@
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						isVisible = true;
-						if (entries.intersectionRatio >= 1) {
+						if (entry.intersectionRatio >= 1) {
 							isFirst = false;
 							observer.unobserve(wrappingElement);
 						}
@@ -34,7 +34,7 @@
 			{
 				root: Document.body,
 				rootMargin: '0px',
-				threshold: 0.5
+				threshold: [0.5, 1]
 			}
 		);
 		observer.observe(wrappingElement);
