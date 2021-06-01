@@ -24,7 +24,6 @@
 
 <style style lang="postcss">
 	article {
-		/* background-color: var(--light-green); */
-		/* height: 100vh; */
+		/* width: 80vw; */
 	}
 </style>

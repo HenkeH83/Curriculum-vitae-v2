@@ -55,7 +55,7 @@
 		<card class:isActive class:isFirst on:click={activateCard}>
 			<img src={urlFor(content.icon).width(100).auto('format').url()} alt={content.alt} />
 			<bodyContainer class="[ collapseableText ]" class:isActive>
-				<h2>{content.skill}</h2>
+				<h3>{content.skill}</h3>
 				{@html toHtml(content)}
 			</bodyContainer>
 		</card>
@@ -148,10 +148,9 @@
 			justify-content: center;
 			position: relative;
 
-			& h2 {
+			& h3 {
 				grid-column: 2;
 				grid-row: 3;
-				font-size: 1.3rem;
 				margin-bottom: 1rem;
 				align-self: center;
 				border-bottom: 2px solid white;
@@ -160,7 +159,7 @@
 			&.isActive {
 				padding: 1rem;
 
-				& h2 {
+				& h3 {
 					padding-bottom: 1rem;
 				}
 			}
@@ -197,7 +196,7 @@
 					grid-row: 2;
 				}
 
-				& h2 {
+				& h3 {
 					align-self: start;
 				}
 			}

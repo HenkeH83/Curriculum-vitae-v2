@@ -16,7 +16,7 @@
 </script>
 
 <article id="about" bind:this={aboutElement}>
-	<h2>{content[0].title}</h2>
+	<h3>{content[0].title}</h3>
 	<blockContainer>
 		{@html toHtml(content[0])}
 	</blockContainer>
@@ -31,8 +31,7 @@
 		align-items: center;
 		/* line-height: 1.2rem; */
 
-		& h2 {
-			font-size: 1.7rem;
+		& h3 {
 			margin-bottom: 1rem;
 		}
 
