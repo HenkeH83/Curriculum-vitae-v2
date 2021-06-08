@@ -30,7 +30,7 @@
 	<svg width="20" height="20" version="1.1" viewBox="0 0 5.2917 5.2917" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 		<g transform="translate(0 -291.71)" stroke="#000" stroke-linecap="square">
 			<ellipse id="dot" class:isActive cx="2.6458" cy="294.35" rx="1.2351" ry="1.2771" stroke-width=".2" style="paint-order:stroke fill markers" />
-			<ellipse id="halo" class:isActive cx="2.6458" cy="294.35" rx="2.2654" ry="2.3423" fill="none" stroke-width=".2" style="paint-order:stroke fill markers" />
+			<ellipse id="halo" class:isActive style="paint-order:stroke fill markers" />
 		</g>
 	</svg>
 </nodeContainer>
@@ -46,6 +46,7 @@
 	#dot {
 		fill: black;
 		&.isActive {
+			/* fill: #33445511; */
 		}
 	}
 	#halo {
@@ -53,6 +54,13 @@
 		display: none;
 		&.isActive {
 			display: inline;
+			cx: 2.6458;
+			cy: 294.35;
+			rx: 2.2654;
+			ry: 2.3423;
+			fill: none;
+			stroke-width: 0.2;
+			animation: growNShrink 0.5s 1;
 		}
 	}
 	.isTop::before {
@@ -80,5 +88,22 @@
 		border-left: 2px solid black;
 		height: 100%;
 		width: 5px;
+	}
+
+	@keyframes growNShrink {
+		0% {
+			rx: 0;
+			ry: 0;
+		}
+		80% {
+			rx: 2.6;
+			ry: 2.6;
+			animation-timing-function: ease-in;
+		}
+		100% {
+			rx: 2.2654;
+			ry: 2.3423;
+			animation-timing-function: ease-out;
+		}
 	}
 </style>

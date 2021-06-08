@@ -128,7 +128,7 @@
 				height: fit-content;
 				transform: rotateY(0deg) rotate(-90deg);
 				transform-origin: bottom right;
-				transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-out;
 			}
 		}
 		@media only screen and (max-height: 600px) {
@@ -143,6 +143,7 @@
 	} */
 	nav:hover btn h3 {
 		transform: rotate(0deg);
+		animation: bounce 0.7s 1;
 	}
 	nav.isTouchScreen {
 		width: 14vw;
@@ -166,6 +167,7 @@
 
 				& h3 {
 					transform: rotate(0deg);
+					animation: bounce 0.7s 1;
 				}
 			}
 			@media only screen and (min-width: 768px) {
@@ -174,38 +176,37 @@
 		}
 	}
 
-	/** används inte */
 	@keyframes bounce {
 		0% {
-			width: 50px;
+			transform: rotate(-90deg);
 			-webkit-animation-timing-function: ease-in;
 		}
 		33% {
-			width: 250px;
+			transform: rotate(30deg);
 			-webkit-animation-timing-function: ease-out;
 		}
 		50% {
-			width: 210px;
+			transform: rotate(-30deg);
 			-webkit-animation-timing-function: ease-in;
 		}
 		66% {
-			width: 250px;
+			transform: rotate(20deg);
 			-webkit-animation-timing-function: ease-out;
 		}
 		82% {
-			width: 240px;
+			transform: rotate(-10deg);
 			-webkit-animation-timing-function: ease-in;
 		}
-		92% {
-			width: 250px;
+		/* 92% {
+			transform: rotate(10deg);
 			-webkit-animation-timing-function: ease-out;
-		}
-		97% {
-			width: 245px;
+		} */
+		/* 97% {
+			transform: rotate(-10deg);
 			-webkit-animation-timing-function: ease-in;
-		}
+		} */
 		100% {
-			width: 250px;
+			transform: rotate(0deg);
 		}
 	}
 </style>
